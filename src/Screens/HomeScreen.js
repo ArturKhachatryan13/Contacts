@@ -1,9 +1,10 @@
 import * as React from 'react';
-import {View, Button, StyleSheet} from 'react-native';
+import { View, Button, StyleSheet } from 'react-native';
+import Routes from '../Navigation/routes';
 
-function ContactsBar({navigation}) {
+function HomeScreen({ navigation }) {
   const loadScene = () => {
-    navigation.navigate('Main');
+    navigation.navigate(Routes.MAIN);
   };
   return (
     <View style={styles.contactsBarContainer}>
@@ -12,7 +13,7 @@ function ContactsBar({navigation}) {
   );
 }
 
-export default ContactsBar;
+export default HomeScreen;
 
 const styles = StyleSheet.create({
   contactsBarContainer: {
