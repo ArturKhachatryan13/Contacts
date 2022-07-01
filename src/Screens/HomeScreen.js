@@ -1,14 +1,20 @@
 import * as React from 'react';
 import { View, Button, StyleSheet } from 'react-native';
 import Routes from '../Navigation/routes';
+import ContactsList from '../Components/ContactsListComponents/ContactsList';
 
 function HomeScreen({ navigation }) {
   const loadScene = () => {
     navigation.navigate(Routes.MAIN);
   };
   return (
-    <View style={styles.contactsBarContainer}>
-      <Button title="ADD" onPress={loadScene} />
+    <View>
+      <View style={styles.contactsBarContainer}>
+        <Button title="ADD" onPress={loadScene} />
+      </View>
+      <View>
+        <ContactsList />
+      </View>
     </View>
   );
 }
