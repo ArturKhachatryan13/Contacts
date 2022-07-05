@@ -2,10 +2,10 @@ import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 
 const ContactImage = ({ contacts }) => {
-  let nameAndSurname = contacts.item.name.split(' ');
-  let userInitials = nameAndSurname[0][0] + nameAndSurname[1][0];
-  let contactPictureAdress = contacts.item.photo;
-  let userInitialsComponents = (
+  const nameAndSurname = contacts.item.name.split(' ');
+  const userInitials = nameAndSurname[0][0] + nameAndSurname[1][0];
+  const contactPictureAdress = contacts.item.photo;
+  const userInitialsComponents = (
     <View style={styles.initialsContainer}>
       <Text style={styles.initialsTextStyle}>{userInitials}</Text>
     </View>
