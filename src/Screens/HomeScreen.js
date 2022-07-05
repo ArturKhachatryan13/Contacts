@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View, Button, StyleSheet } from 'react-native';
 import Routes from '../Navigation/routes';
-import ContactsList from '../Components/ContactsListComponents/ContactsList';
+import ContactsList from '../Components/List/ContactsList';
 
 function HomeScreen({ navigation }) {
   const loadScene = () => {

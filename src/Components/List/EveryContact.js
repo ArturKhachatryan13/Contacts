@@ -2,15 +2,15 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import ContactImage from './ContactImage';
 
-const EveryContact = ({ contacts }) => {
+const EveryContact = ({ contact }) => {
   return (
     <View style={styles.contactMainContainer}>
       <View>
-        <ContactImage contacts={contacts} />
+        <ContactImage contact={contact} />
       </View>
       <View style={styles.contactNameContainer}>
-        <Text style={styles.name}>{contacts.item.name}</Text>
-        <Text style={styles.number}>{contacts.item.number}</Text>
+        <Text style={styles.name}>{contact.name + ' ' + contact.surname}</Text>
+        <Text style={styles.number}>{contact.number}</Text>
       </View>
     </View>
   );

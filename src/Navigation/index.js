@@ -9,7 +9,8 @@ const Stack = createNativeStackNavigator();
 function NavigationRoot() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{ cardStyle: { backgroundColor: '#fff' } }}>
         <Stack.Screen
           name={Routes.HOME}
           component={ScreensComponents.HomeScreen}

@@ -1,20 +1,19 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 
-const ContactImage = ({ contacts }) => {
-  const nameAndSurname = contacts.item.name.split(' ');
-  const userInitials = nameAndSurname[0][0] + nameAndSurname[1][0];
-  const contactPictureAdress = contacts.item.photo;
+const ContactImage = ({ contact }) => {
+  const userInitials = contact.name[0] + contact.surname[0];
+  const contactPictureAdress = contact.photo;
   const userInitialsComponents = (
     <View style={styles.initialsContainer}>
       <Text style={styles.initialsTextStyle}>{userInitials}</Text>
     </View>
   );
-  let userPictureComponents = (
+  const userPictureComponents = (
     <View>
       <Image
         style={styles.pictureStyle}
-        source={require('../ContactsListComponents/ContactsImage/Rectangle60.png')}
+        source={require('../../assets/images/Rectangle60.png')}
       />
     </View>
   );
