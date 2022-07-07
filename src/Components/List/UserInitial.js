@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 const UserInitial = ({ contact }) => {
-  const userInitials = contact.name[0] + contact.surname[0];
+  const userInitials = contact?.name[0] + contact?.surname[0];
 
   return (
     <View style={styles.initialsContainer}>

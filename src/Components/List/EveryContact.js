@@ -1,16 +1,15 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import ContactImage from './ContactImage';
+import Colors from '../../../utils/colors';
 
 const EveryContact = ({ title }) => {
   return (
     <View style={styles.contactMainContainer}>
-      <View>
-        <ContactImage contact={title} />
-      </View>
+      <ContactImage contact={title} />
       <View style={styles.contactNameContainer}>
-        <Text style={styles.name}>{title.name + ' ' + title.surname}</Text>
-        <Text style={styles.number}>{title.number}</Text>
+        <Text style={styles.name}>{title?.name + ' ' + title?.surname}</Text>
+        <Text style={styles.number}>{title?.number}</Text>
       </View>
     </View>
   );
@@ -34,18 +33,18 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginLeft: 13,
     borderBottomWidth: 1,
-    borderBottomColor: '#D9DBE9',
+    borderBottomColor: Colors.quartz,
   },
   name: {
     fontWeight: '500',
     fontSize: 16,
-    color: '#4E4B66',
+    color: Colors.cornFlowerBlue,
     lineHeight: 28,
   },
   number: {
     fontWeight: '500',
     fontSize: 12,
-    color: '#6E7191',
+    color: Colors.stormGrey,
     marginBottom: 5,
     lineHeight: 28,
   },
