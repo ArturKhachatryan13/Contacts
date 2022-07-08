@@ -3,19 +3,21 @@ import { View, Text, StyleSheet } from 'react-native';
 import Colors from '../../../utils/colors';
 import Avatar from '../../ui-kit/Avatar';
 
-const EveryContact = ({ size, title }) => {
+const EveryContact = ({ contact }) => {
   return (
     <View style={styles.contactMainContainer}>
       <Avatar
-        name={title.name}
-        surname={title.surname}
-        image={title.photo}
-        size={size}
+        name={contact.name}
+        surname={contact.surname}
+        image={contact.photo}
+        size="small"
       />
 
       <View style={styles.contactNameContainer}>
-        <Text style={styles.name}>{title?.name + ' ' + title?.surname}</Text>
-        <Text style={styles.number}>{title?.number}</Text>
+        <Text style={styles.name}>
+          {contact?.name + ' ' + contact?.surname}
+        </Text>
+        <Text style={styles.number}>{contact?.number}</Text>
       </View>
     </View>
   );

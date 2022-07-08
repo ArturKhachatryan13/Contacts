@@ -1,6 +1,6 @@
 import React from 'react';
 import { SectionList } from 'react-native';
-import EveryContact from './EveryContact';
+import Contact from './Contact';
 import SectionTitle from './SectionTitle';
 
 const ContactsList = ({ memoizedValue }) => {
@@ -8,7 +8,7 @@ const ContactsList = ({ memoizedValue }) => {
     <SectionList
       sections={memoizedValue}
       keyExtractor={item => item.id}
-      renderItem={({ item }) => <EveryContact size="small" title={item} />}
+      renderItem={({ item }) => <Contact contact={item} />}
       renderSectionHeader={({ section: { title } }) => (
         <SectionTitle title={title} />
       )}

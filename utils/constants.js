@@ -19,7 +19,7 @@ const numbers = [
   '(907) 555-0103',
 ];
 const img = [
-  'https://this-person-does-not-exist.com/img/avatar-25a62e8a77fb8cf2bdf5da2acdfe9704.jpg',
+  'https://robohash.org/quievenietassumenda.png?size=50x50&set=set1',
 ];
 
 export default { name, surName, numbers, img };

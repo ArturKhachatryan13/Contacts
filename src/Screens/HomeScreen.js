@@ -8,8 +8,8 @@ import {
 } from '../../utils/helperFunctions/сontactsListGenerator';
 import userInfo from '../../utils/constants';
 import { useMemo } from 'react';
-import FlatListContacts from '../Components/List/FavorateContactsList';
-import SectionListContacts from '../Components/List/ContactsList';
+import FavorateContactsList from '../Components/List/FavorateContactsList';
+import AllListContacts from '../Components/List/ContactsList';
 
 const generetedData = generateData(
   userInfo.name,
@@ -30,8 +30,8 @@ const ContactsList = () => {
 
   return (
     <View style={{ flex: 1 }}>
-      <FlatListContacts data={flatData} />
-      <SectionListContacts memoizedValue={memoizedValue} />
+      <FavorateContactsList data={flatData} />
+      <AllListContacts memoizedValue={memoizedValue} />
     </View>
   );
 };
