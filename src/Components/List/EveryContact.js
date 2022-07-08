@@ -1,12 +1,18 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import ContactImage from './ContactImage';
 import Colors from '../../../utils/colors';
+import Avatar from '../../ui-kit/Avatar';
 
-const EveryContact = ({ title }) => {
+const EveryContact = ({ size, title }) => {
   return (
     <View style={styles.contactMainContainer}>
-      <ContactImage contact={title} />
+      <Avatar
+        name={title.name}
+        surname={title.surname}
+        image={title.photo}
+        size={size}
+      />
+
       <View style={styles.contactNameContainer}>
         <Text style={styles.name}>{title?.name + ' ' + title?.surname}</Text>
         <Text style={styles.number}>{title?.number}</Text>
@@ -18,12 +24,11 @@ export default EveryContact;
 
 const styles = StyleSheet.create({
   contactMainContainer: {
-    height: 70,
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
     paddingLeft: 16,
-    paddingBottom: 10,
+    paddingBottom: 20,
   },
   contactNameContainer: {
     height: 53,

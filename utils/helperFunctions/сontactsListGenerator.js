@@ -18,6 +18,7 @@ export const generateData = (newName, surname, num, image, count) => {
       number: num[ramdomIforNumber],
       id: Math.random(),
       photo: image[randomIImg],
+      favorate: true,
     };
     return element;
   });
@@ -41,9 +42,21 @@ export const changeDataStructure = contactsData => {
   }
   return sectionListArray;
 };
-// The function for the filter
 export const compare = (a, b) => {
   if (a.name > b.name) return 1;
   if (a.name == b.name) return 0;
   if (a.name < b.name) return -1;
+};
+export const getFavorateContacts = sectionList => {
+  let filterList = sectionList.filter(contact => contact.favorate === true);
+  return filterList;
+  // let filterList = [];
+  // sectionList.map(contactGroup => {
+  //   contactGroup.data.map(contacts => {
+  //     if (contacts.favorate === true) {
+  //       filterList.push(contacts);
+  //     }
+  //   });
+  // });
+  // return filterList;
 };

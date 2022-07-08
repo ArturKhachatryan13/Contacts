@@ -9,16 +9,7 @@ function HomeScreen() {
   const loadScene = () => {
     navigation.navigate(Routes.MAIN);
   };
-  return (
-    <View>
-      <View style={styles.contactsBarContainer}>
-        <Button title="ADD" onPress={loadScene} />
-      </View>
-      <View>
-        <ContactsList />
-      </View>
-    </View>
-  );
+  return <ContactsList />;
 }
 
 export default HomeScreen;
