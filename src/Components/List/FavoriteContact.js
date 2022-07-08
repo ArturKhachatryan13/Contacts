@@ -7,7 +7,7 @@ const FavoriteContact = ({ contact }) => {
   const contactName = contact.name + ' ' + contact.surname;
 
   return (
-    <View style={styles.flatListContainer}>
+    <View style={styles.avatarContainer}>
       <Avatar
         name={contact.name}
         surname={contact.surname}
@@ -22,7 +22,7 @@ const FavoriteContact = ({ contact }) => {
 };
 
 const styles = StyleSheet.create({
-  flatListContainer: {
+  avatarContainer: {
     paddingVertical: 20,
     marginHorizontal: 5,
     marginVertical: 20,

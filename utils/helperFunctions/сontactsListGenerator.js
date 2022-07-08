@@ -43,20 +43,14 @@ export const changeDataStructure = contactsData => {
   return sectionListArray;
 };
 export const compare = (a, b) => {
-  if (a.name > b.name) return 1;
-  if (a.name == b.name) return 0;
-  if (a.name < b.name) return -1;
+  if (a.name > b.name) {
+    return 1;
+  } else if (a.name == b.name) {
+    return 0;
+  } else {
+    return -1;
+  }
 };
 export const getFavorateContacts = sectionList => {
-  let filterList = sectionList.filter(contact => contact.favorate === true);
-  return filterList;
-  // let filterList = [];
-  // sectionList.map(contactGroup => {
-  //   contactGroup.data.map(contacts => {
-  //     if (contacts.favorate === true) {
-  //       filterList.push(contacts);
-  //     }
-  //   });
-  // });
-  // return filterList;
+  return sectionList.filter(contact => contact.favorate === true);
 };

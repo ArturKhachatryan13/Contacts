@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import {
   generateData,
   changeDataStructure,
@@ -26,14 +26,20 @@ const ContactsList = () => {
     [],
   );
 
-  let flatData = getFavorateContacts(firstGanaretedData);
+  const flatData = getFavorateContacts(firstGanaretedData);
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.mainScreencontainer}>
       <FavorateContactsList data={flatData} />
       <AllListContacts memoizedValue={memoizedValue} />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  mainScreencontainer: {
+    flex: 1,
+  },
+});
 
 export default ContactsList;

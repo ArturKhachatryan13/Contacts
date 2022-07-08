@@ -13,10 +13,7 @@ export default StyleSheet.create({
   medium: {
     width: 103,
     height: 103,
-    backgroundColor: '#1B2124',
     borderRadius: 24,
-    justifyContent: 'center',
-    alignItems: 'center',
     marginHorizontal: 5,
   },
   large: {},
