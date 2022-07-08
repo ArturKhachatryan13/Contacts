@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
-import Avatar from '../../../ui-kit/Avatar';
+import Avatar from '../../../src/ui-kit/Avatar';
 
 const renderItem = ({ item }) => {
   const contactName = item.name + ' ' + item.surname;
@@ -22,11 +22,11 @@ const renderItem = ({ item }) => {
   );
 };
 
-const FlatListContacts = ({ data }) => {
+const FavorateContactsList = ({ data }) => {
   return <FlatList horizontal data={data} renderItem={renderItem} />;
 };
 
-export default FlatListContacts;
+export default FavorateContactsList;
 
 const styles = StyleSheet.create({
   flatListContainer: {

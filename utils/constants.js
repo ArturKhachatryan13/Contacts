@@ -18,6 +18,8 @@ const numbers = [
   '(907) 555-0104',
   '(907) 555-0103',
 ];
-const img = ['', './ContactsImage/Rectangle60.png'];
+const img = [
+  'https://this-person-does-not-exist.com/img/avatar-25a62e8a77fb8cf2bdf5da2acdfe9704.jpg',
+];
 
 export default { name, surName, numbers, img };

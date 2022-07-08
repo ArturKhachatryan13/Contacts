@@ -1,23 +1,39 @@
-import * as React from 'react';
-import { View, Button, StyleSheet } from 'react-native';
-import Routes from '../Navigation/routes';
-import ContactsList from '../Components/List/ContactsList';
-import { useNavigation } from '@react-navigation/native';
+import React from 'react';
+import { View } from 'react-native';
+import {
+  generateData,
+  changeDataStructure,
+  compare,
+  getFavorateContacts,
+} from '../../utils/helperFunctions/сontactsListGenerator';
+import userInfo from '../../utils/constants';
+import { useMemo } from 'react';
+import FlatListContacts from '../Components/List/FavorateContactsList';
+import SectionListContacts from '../Components/List/ContactsList';
 
-function HomeScreen() {
-  const navigation = useNavigation();
-  const loadScene = () => {
-    navigation.navigate(Routes.MAIN);
-  };
-  return <ContactsList />;
-}
+const generetedData = generateData(
+  userInfo.name,
+  userInfo.surName,
+  userInfo.numbers,
+  userInfo.img,
+  50,
+);
+const firstGanaretedData = [...generetedData];
 
-export default HomeScreen;
+const ContactsList = () => {
+  const memoizedValue = useMemo(
+    () => changeDataStructure(generetedData.sort(compare)),
+    [],
+  );
 
-const styles = StyleSheet.create({
-  contactsBarContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-  },
-});
+  let flatData = getFavorateContacts(firstGanaretedData);
+
+  return (
+    <View style={{ flex: 1 }}>
+      <FlatListContacts data={flatData} />
+      <SectionListContacts memoizedValue={memoizedValue} />
+    </View>
+  );
+};
+
+export default ContactsList;

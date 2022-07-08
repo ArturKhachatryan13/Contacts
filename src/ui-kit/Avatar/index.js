@@ -13,7 +13,7 @@ const Avatar = ({ image, name, surname, size }) => {
     <Image
       style={sizeStyles[size]}
       source={{
-        uri: 'https://i.pinimg.com/736x/9f/fd/57/9ffd57a41f8fa5dc3d29098db6cc63bd.jpg',
+        uri: image,
       }}
     />
   ) : (
