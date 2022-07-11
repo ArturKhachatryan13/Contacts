@@ -13,5 +13,6 @@ export default StyleSheet.create({
     width: 103,
     height: 103,
     borderRadius: 24,
+    backgroundColor: '#D7E9E5',
   },
 });
