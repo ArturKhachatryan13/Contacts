@@ -5,7 +5,6 @@ import sizeStyles from './size';
 import containerSize from './containerSize';
 
 const Avatar = ({ image, name, surname, size }) => {
-  console.log(name);
   const userInitials = useMemo(() => {
     return `${name[0]} ${surname[0] || ''}`;
   }, [name, surname]);

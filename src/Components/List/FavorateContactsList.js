@@ -7,8 +7,10 @@ const renderItem = ({ item }) => {
   return <Contact contact={item} isFavorite />;
 };
 
-const FavorateContactsList = ({ data }) => {
-  return <FlatList horizontal data={data} renderItem={renderItem} />;
+const FavorateContactsList = ({ data, vertical }) => {
+  return (
+    <FlatList horizontal={!vertical} data={data} renderItem={renderItem} />
+  );
 };
 
 export default FavorateContactsList;

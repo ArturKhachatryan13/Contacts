@@ -10,6 +10,7 @@ import userInfo from '../../utils/constants';
 import { useMemo } from 'react';
 import FavorateContactsList from '../Components/List/FavorateContactsList';
 import AllListContacts from '../Components/List/ContactsList';
+import SearchContact from '../Components/Search/SearchContact';
 
 const generetedData = generateData(
   userInfo.name,
@@ -30,6 +31,7 @@ const ContactsList = () => {
 
   return (
     <View style={styles.mainScreencontainer}>
+      <SearchContact contacts={flatData} />
       <FavorateContactsList data={flatData} />
       <AllListContacts memoizedValue={memoizedValue} />
     </View>
@@ -39,6 +41,7 @@ const ContactsList = () => {
 const styles = StyleSheet.create({
   mainScreencontainer: {
     flex: 1,
+    backgroundColor: 'white',
   },
 });
 
