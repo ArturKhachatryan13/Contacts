@@ -6,7 +6,7 @@ import Colors from '../../../utils/colors';
 
 const Avatar = ({ image, name, surname, size, style }) => {
   const userInitials = useMemo(() => {
-    return `${name[0]}${surname[0] || ''}`;
+    return `${name[0]}${surname?.[0] || ''}`;
   }, [name, surname]);
 
   return image ? (
