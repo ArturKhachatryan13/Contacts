@@ -4,16 +4,16 @@ export const numberGenerator = objKey => {
 };
 
 export const generateData = ({ name, surname, numbers, img }, count) => {
-  const genereteNewArray = Array(count).fill(null);
-  let generatedNewData = genereteNewArray.map(element => ({
-    name: name[numberGenerator(name)],
-    surname: surname[numberGenerator(surname)],
-    number: numbers[numberGenerator(numbers)],
-    id: Math.random(),
-    photo: img[numberGenerator(img)],
-    favorate: true,
-  }));
-  return generatedNewData;
+  return Array(count)
+    .fill(null)
+    .map(() => ({
+      name: name[numberGenerator(name)],
+      surname: surname[numberGenerator(surname)],
+      number: numbers[numberGenerator(numbers)],
+      id: Math.random(),
+      photo: img[numberGenerator(img)],
+      favorate: Math.random() < 0.3,
+    }));
 };
 export const changeDataStructure = contactsData => {
   return contactsData.reduce(
