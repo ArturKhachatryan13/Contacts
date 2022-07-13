@@ -7,31 +7,19 @@ import {
   getFavorateContacts,
 } from '../../utils/helperFunctions/сontactsListGenerator';
 import userInfo from '../../utils/constants';
-import { useMemo } from 'react';
 import FavorateContactsList from '../Components/List/FavorateContactsList';
 import AllListContacts from '../Components/List/ContactsList';
 
-const generetedData = generateData(
-  userInfo.name,
-  userInfo.surName,
-  userInfo.numbers,
-  userInfo.img,
-  50,
-);
+const generetedData = generateData(userInfo, 50);
 const firstGanaretedData = [...generetedData];
+const flatListData = getFavorateContacts(generetedData);
+const sectionListData = changeDataStructure(firstGanaretedData.sort(compare));
 
 const ContactsList = () => {
-  const memoizedValue = useMemo(
-    () => changeDataStructure(generetedData.sort(compare)),
-    [],
-  );
-
-  const flatData = getFavorateContacts(firstGanaretedData);
-
   return (
     <View style={styles.mainScreencontainer}>
-      <FavorateContactsList data={flatData} />
-      <AllListContacts memoizedValue={memoizedValue} />
+      <FavorateContactsList data={flatListData} />
+      <AllListContacts memoizedValue={sectionListData} />
     </View>
   );
 };

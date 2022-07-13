@@ -1,8 +1,9 @@
 import { StyleSheet } from 'react-native';
+import Colors from '../../../utils/colors';
 
 export default StyleSheet.create({
   small: {
-    backgroundColor: '#D7E9E5',
+    backgroundColor: Colors.edgewater,
     borderRadius: 12,
     height: 53,
     width: 53,
@@ -13,6 +14,6 @@ export default StyleSheet.create({
     width: 103,
     height: 103,
     borderRadius: 24,
-    backgroundColor: '#D7E9E5',
+    backgroundColor: Colors.edgewater,
   },
 });

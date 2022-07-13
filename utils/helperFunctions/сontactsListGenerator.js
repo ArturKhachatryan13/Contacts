@@ -3,37 +3,26 @@ export const numberGenerator = objKey => {
   return number;
 };
 
-export const generateData = (newName, surname, num, image, count) => {
+export const generateData = ({ name, surname, numbers, img }, count) => {
   const genereteNewArray = Array(count).fill(null);
-  let generatedNewData = [];
-  generatedNewData = genereteNewArray.map(element => {
-    const randomindexforName = numberGenerator(newName);
-    const randomindexforSurName = numberGenerator(surname);
-    const ramdomIforNumber = numberGenerator(num);
-    const randomIImg = numberGenerator(image);
-
-    element = {
-      name: newName[randomindexforName],
-      surname: surname[randomindexforSurName],
-      number: num[ramdomIforNumber],
-      id: Math.random(),
-      photo: image[randomIImg],
-      favorate: true,
-    };
-    return element;
-  });
+  let generatedNewData = genereteNewArray.map(element => ({
+    name: name[numberGenerator(name)],
+    surname: surname[numberGenerator(surname)],
+    number: numbers[numberGenerator(numbers)],
+    id: Math.random(),
+    photo: img[numberGenerator(img)],
+    favorate: true,
+  }));
   return generatedNewData;
 };
 export const changeDataStructure = contactsData => {
-  let count = 0;
   return contactsData.reduce(
     (total, contact) => {
-      if (contact.name[0] !== total[count].title) {
+      if (contact.name[0] !== total[total.length - 1].title) {
         total.push({ title: contact.name[0], data: [contact] });
-        count++;
         return total;
       } else {
-        total[count].data.push(contact);
+        total[total.length - 1].data.push(contact);
         return total;
       }
     },
