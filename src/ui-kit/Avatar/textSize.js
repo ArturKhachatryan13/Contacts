@@ -1,7 +1,11 @@
 import { StyleSheet } from 'react-native';
+import Colors from '../../../utils/colors';
 
 export default StyleSheet.create({
-  small: { fontSize: 16, lineHeight: 24, color: '#FFFFFF' },
-  medium: { fontSize: 14 },
-  large: {},
+  textstyle: {
+    ineHeight: 24,
+    color: Colors.white,
+  },
+  small: { fontSize: 14 },
+  medium: { fontSize: 16 },
 });

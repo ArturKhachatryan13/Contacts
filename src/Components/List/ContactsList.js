@@ -2,10 +2,10 @@ import React from 'react';
 import { SectionList, View, Text, StyleSheet } from 'react-native';
 import Contact from './Contact';
 
-const ContactsList = ({ memoizedValue }) => {
+const ContactsList = ({ contacts }) => {
   return (
     <SectionList
-      sections={memoizedValue}
+      sections={contacts}
       keyExtractor={item => item.id}
       renderItem={({ item }) => <Contact contact={item} />}
       renderSectionHeader={({ section: { title } }) => (

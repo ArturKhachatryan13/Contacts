@@ -4,7 +4,8 @@ import { View, Text, StyleSheet } from 'react-native';
 import Avatar from '../../ui-kit/Avatar';
 
 const FavoriteContact = ({ contact }) => {
-  const contactName = contact.name + ' ' + contact.surname;
+  const contactName =
+    contact.name + (contact.surname ? ` ${contact.surname}` : ' ');
 
   return (
     <View style={styles.avatarContainer}>
