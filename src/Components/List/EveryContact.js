@@ -15,7 +15,7 @@ const EveryContact = ({ contact }) => {
 
       <View style={styles.contactNameContainer}>
         <Text style={styles.name}>
-          {contact.name + contact.surname ? ` ${contact.surname}` : ' '}
+          {contact.name + (contact.surname ? ` ${contact.surname}` : ' ')}
         </Text>
         <Text style={styles.number}>{contact?.number}</Text>
       </View>
