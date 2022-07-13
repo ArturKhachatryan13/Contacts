@@ -1,24 +1,32 @@
-import * as React from 'react';
-import { View, Button, StyleSheet } from 'react-native';
-import Routes from '../Navigation/routes';
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
+import {
+  generateData,
+  changeDataStructure,
+  compare,
+  getFavorateContacts,
+} from '../../utils/helperFunctions/contactsListGenerator';
+import userInfo from '../../utils/constants';
+import FavorateContactsList from '../Components/List/FavorateContactsList';
+import AllListContacts from '../Components/List/ContactsList';
 
-function HomeScreen({ navigation }) {
-  const loadScene = () => {
-    navigation.navigate(Routes.MAIN);
-  };
+const generetedData = generateData(userInfo, 50);
+const favorateContacts = getFavorateContacts(generetedData);
+const contacts = changeDataStructure([...generetedData].sort(compare));
+
+const ContactsList = () => {
   return (
-    <View style={styles.contactsBarContainer}>
-      <Button title="ADD" onPress={loadScene} />
+    <View style={styles.mainScreencontainer}>
+      <FavorateContactsList data={favorateContacts} />
+      <AllListContacts contacts={contacts} />
     </View>
   );
-}
-
-export default HomeScreen;
+};
 
 const styles = StyleSheet.create({
-  contactsBarContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
+  mainScreencontainer: {
+    flex: 1,
   },
 });
+
+export default ContactsList;
