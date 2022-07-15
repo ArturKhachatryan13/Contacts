@@ -8,4 +8,5 @@ export default {
   black: '#1B2124',
   aircraft_white: '#EFF0F7',
   blue_buzz: '#A0A3BD',
+  shock_blue: '#3333FF',
 };

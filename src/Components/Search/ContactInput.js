@@ -4,15 +4,15 @@ import { TextInput, View, StyleSheet } from 'react-native';
 
 import Colors from '../../../utils/colors';
 
-const ContactInput = ({ getSearchInputValue, contactName }) => {
+const ContactInput = ({ onChangeText, value }) => {
   return (
     <View style={styles.inputContainer}>
       <TextInput
         autoFocus={true}
         style={styles.inputTextContainer}
         placeholder="Search"
-        value={contactName}
-        onChangeText={getSearchInputValue}
+        value={value}
+        onChangeText={onChangeText}
       />
     </View>
   );

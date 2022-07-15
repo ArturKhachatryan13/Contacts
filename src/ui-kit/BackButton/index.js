@@ -1,5 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Image, StyleSheet } from 'react-native';
+import colors from '../../../utils/colors';
 
 const BackButton = ({ onPress }) => {
   return (
@@ -17,7 +18,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   arrowIcon: {
-    tintColor: '#3333FF',
+    tintColor: colors.shock_blue,
   },
 });
 
