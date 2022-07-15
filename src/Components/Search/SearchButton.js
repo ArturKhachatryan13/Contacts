@@ -1,41 +1,38 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
 
-const SearchButton = () => {
+import { Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+
+import Colors from '../../../utils/colors';
+
+const SearchButton = ({ onPress }) => {
   return (
-    <View style={styles.searchButtonContainer}>
+    <TouchableOpacity onPress={onPress} style={styles.searchButtonContainer}>
       <Image
         source={require('../../../src/assets/images/Search.png')}
         style={styles.imageStyles}
       />
       <Text style={styles.searchTextStyles}>Search</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
   searchButtonContainer: {
-    width: 350,
     height: 40,
-    left: 10,
-    top: 10,
-    marginBottom: 25,
+    marginHorizontal: 16,
+    marginVertical: 16,
     flexDirection: 'row',
-    justifyContent: 'flex-start',
     alignItems: 'center',
-    backgroundColor: '#EFF0F7',
+    backgroundColor: Colors.aircraft_white,
     borderRadius: 12,
   },
   imageStyles: {
     marginLeft: 18,
-    marginRight: 10,
+    marginRight: 5,
   },
   searchTextStyles: {
     fontSize: 14,
-    lineHeight: 24,
-    width: 46,
-    height: 24,
-    color: '#A0A3BD',
+    color: Colors.blue_buzz,
   },
 });
 export default SearchButton;

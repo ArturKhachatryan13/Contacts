@@ -15,10 +15,10 @@ const generetedData = generateData(userInfo, 50);
 const favorateContacts = getFavorateContacts(generetedData);
 const contacts = changeDataStructure([...generetedData].sort(compare));
 
-const ContactsList = () => {
+const ContactsList = ({ navigation }) => {
   return (
     <View style={styles.mainScreencontainer}>
-      <SearchContact contacts={favorateContacts} />
+      <SearchContact allContacts={generetedData} navigation={navigation} />
       <FavorateContactsList data={favorateContacts} />
       <AllListContacts contacts={contacts} />
     </View>
