@@ -1,4 +1,5 @@
-const HOME = 'Home';
+const HOME = 'Contacts';
 const MAIN = 'Main';
+const CONTACTS = 'SearchContact';
 
-export default { HOME, MAIN };
+export default { HOME, MAIN, CONTACTS };

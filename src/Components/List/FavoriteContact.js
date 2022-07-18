@@ -5,7 +5,7 @@ import Avatar from '../../ui-kit/Avatar';
 
 const FavoriteContact = ({ contact }) => {
   const contactName =
-    contact.name + (contact.surname ? ` ${contact.surname}` : ' ');
+    contact.name + (contact.surname ? ` ${contact.surname}` : '');
 
   return (
     <View style={styles.avatarContainer}>
@@ -25,7 +25,7 @@ const FavoriteContact = ({ contact }) => {
 const styles = StyleSheet.create({
   avatarContainer: {
     paddingVertical: 20,
-    marginHorizontal: 5,
+    marginHorizontal: 10,
     marginVertical: 20,
     justifyContent: 'center',
     alignItems: 'center',
