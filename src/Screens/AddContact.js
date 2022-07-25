@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 
 import { View, StyleSheet } from 'react-native';
-
-import AddContactInput from '../ui-kit/AddContactInput/index';
-import SaveButton from '../ui-kit/SaveButton/SaveButton';
 import { useNavigation } from '@react-navigation/native';
-import colors from '../../utils/colors';
-import { useDispatch } from 'react-redux';
-import { addContactAction } from '../store/contactReducer';
 
-const AddNewContact = () => {
+import { addContactAction } from '../store/actions';
+import AddContactInput from '../ui-kit/Input/index';
+import SaveButton from '../ui-kit/SaveButton';
+import colors from '../../utils/colors';
+
+import { useDispatch } from 'react-redux';
+
+const AddContact = () => {
   const dispatch = useDispatch();
   const navigation = useNavigation();
   const [nameValue, setNameValue] = useState('');
@@ -27,7 +28,6 @@ const AddNewContact = () => {
     if (nameValue && phoneValue.length >= 6) {
       dispatch(addContactAction(contact));
       navigation.goBack();
-      console.log(contact);
     }
   };
 
@@ -56,7 +56,7 @@ const AddNewContact = () => {
         }}
       />
       <View style={styles.buttonContainer}>
-        <SaveButton onPass={addNewContact} />
+        <SaveButton title="Save" onPass={addNewContact} small="small" />
       </View>
     </View>
   );
@@ -74,4 +74,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AddNewContact;
+export default AddContact;

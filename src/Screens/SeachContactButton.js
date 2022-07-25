@@ -11,7 +11,7 @@ const SeachContact = () => {
   const route = useRoute();
   const timeoutRef = useRef();
   const contactsList = route.params.contacts;
-  const mockData = useRef(contactsList.slice(0, 10));
+  const mockData = useRef(contactsList.contact.slice(0, 10));
   const [value, setValue] = useState('');
   const [data, setData] = useState(mockData.current);
 
@@ -27,7 +27,7 @@ const SeachContact = () => {
     text => {
       setData(
         text
-          ? contactsList?.filter(contact => {
+          ? contactsList?.contact.filter(contact => {
               return (
                 contact?.name +
                 ' ' +

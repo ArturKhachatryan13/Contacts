@@ -1,28 +1,24 @@
 import React from 'react';
+
 import { View, StyleSheet } from 'react-native';
-import {
-  changeDataStructure,
-  compare,
-  getFavorateContacts,
-} from '../../utils/helperFunctions/contactsListGenerator';
+
 import Colors from '../../utils/colors';
 import FavorateContactsList from '../Components/List/FavorateContactsList';
 import AllListContacts from '../Components/List/ContactsList';
 import SearchContact from '../Components/Search/SearchContact';
 import AddHeaderButton from '../Components/profileHeader/AddHeaderButton';
 import Contacts from '../Navigation/routes';
+
 import { useSelector } from 'react-redux';
 
 const ContactsList = () => {
   const generetedData = useSelector(state => state);
-  const favorateContacts = getFavorateContacts(generetedData);
-  const contacts = changeDataStructure([...generetedData].sort(compare));
 
   return (
     <View style={styles.mainScreenContainer}>
       <SearchContact allContacts={generetedData} />
-      <FavorateContactsList data={favorateContacts} />
-      <AllListContacts contacts={contacts} />
+      <FavorateContactsList />
+      <AllListContacts />
     </View>
   );
 };
@@ -41,7 +37,7 @@ ContactsList.options = ({ navigation }) => {
       return (
         <AddHeaderButton
           onPress={() => {
-            navigation.navigate(Contacts.ADDNEWCONTACT);
+            navigation.navigate(Contacts.ADD_CONTACT);
           }}
         />
       );

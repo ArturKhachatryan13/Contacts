@@ -1,8 +1,8 @@
 import { generateData } from '../../utils/helperFunctions/contactsListGenerator';
 import userInfo from '../../utils/constants';
+import { ADD_CONTACT } from './actions';
 
 const defaultState = generateData(userInfo, 50);
-const ADD_CONTACT = 'ADD CONTACT';
 
 export const contactReducer = (state = defaultState, action) => {
   switch (action.type) {
@@ -11,11 +11,4 @@ export const contactReducer = (state = defaultState, action) => {
     default:
       return state;
   }
-};
-
-export const addContactAction = payload => {
-  return {
-    type: ADD_CONTACT,
-    payload,
-  };
 };

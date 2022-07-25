@@ -1,16 +1,15 @@
 import * as React from 'react';
 
+import SeachContact from '../Screens/SeachContactButton';
+import ContactsList from '../Screens/HomeScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ScreensComponents from './screens';
 import Routes from './routes';
-import SeachContact from '../Screens/SeachContactButton';
-import ContactsList from '../Screens/HomeScreen';
+
 const Stack = createNativeStackNavigator();
-import { useDispatch, useSelector } from 'react-redux';
 
 function NavigationRoot() {
-  const contactsData = useSelector(state => state);
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -29,8 +28,8 @@ function NavigationRoot() {
           options={SeachContact.options}
         />
         <Stack.Screen
-          name={Routes.ADDNEWCONTACT}
-          component={ScreensComponents.AddNewContact}
+          name={Routes.ADD_CONTACT}
+          component={ScreensComponents.Add_Contact}
         />
       </Stack.Navigator>
     </NavigationContainer>

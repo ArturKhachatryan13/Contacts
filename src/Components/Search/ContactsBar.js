@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { FlatList } from 'react-native';
+
 import EveryContact from '../List/EveryContact';
 
 const ContactsBar = ({ data }) => {

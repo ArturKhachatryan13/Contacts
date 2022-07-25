@@ -1,4 +1,9 @@
 import { createStore } from 'redux';
 import { contactReducer } from './contactReducer';
+import { combineReducers } from 'redux';
 
-export const store = createStore(contactReducer);
+const rootReducer = combineReducers({
+  contact: contactReducer,
+});
+
+export const store = createStore(rootReducer);
