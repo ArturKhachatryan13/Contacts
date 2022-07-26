@@ -16,7 +16,7 @@ function NavigationRoot() {
         <Stack.Screen
           name={Routes.HOME}
           component={ScreensComponents.HomeScreen}
-          options={ContactsList.options}
+          options={ScreensComponents.HomeScreen.options}
         />
         <Stack.Screen
           name={Routes.MAIN}
@@ -25,11 +25,11 @@ function NavigationRoot() {
         <Stack.Screen
           name={Routes.CONTACTS}
           component={ScreensComponents.SeachContact}
-          options={SeachContact.options}
+          options={ScreensComponents.SeachContact.options}
         />
         <Stack.Screen
           name={Routes.ADD_CONTACT}
-          component={ScreensComponents.Add_Contact}
+          component={ScreensComponents.AddContact}
         />
       </Stack.Navigator>
     </NavigationContainer>

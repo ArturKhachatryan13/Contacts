@@ -22,8 +22,6 @@ const AddContact = () => {
       name: nameValue,
       surname: surnameValue,
       number: phoneValue,
-      id: Math.random(),
-      favorate: Math.random() <= 0.3 ? true : false,
     };
     if (nameValue && phoneValue.length >= 6) {
       dispatch(addContactAction(contact));

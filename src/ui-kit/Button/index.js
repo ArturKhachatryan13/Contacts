@@ -4,7 +4,7 @@ import { Text, TouchableOpacity } from 'react-native';
 
 import buttonsize from '../SaveButton/size';
 
-const SaveButton = ({ onPass, title, small }) => {
+const Button = ({ onPass, title, small }) => {
   return (
     <TouchableOpacity
       style={[buttonsize.buttonStyes, buttonsize[small]]}
@@ -14,4 +14,4 @@ const SaveButton = ({ onPass, title, small }) => {
   );
 };
 
-export default SaveButton;
+export default Button;

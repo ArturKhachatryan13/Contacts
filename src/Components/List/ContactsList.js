@@ -3,12 +3,12 @@ import React from 'react';
 import { SectionList, View, Text, StyleSheet } from 'react-native';
 
 import Contact from './Contact';
-import { selectContactsWithLetter } from '../../store/selectors';
+import { selectSectionsContacts } from '../../store/selectors';
 
 import { useSelector } from 'react-redux';
 
 const ContactsList = () => {
-  const contacts = useSelector(selectContactsWithLetter);
+  const contacts = useSelector(selectSectionsContacts);
 
   return (
     <SectionList
