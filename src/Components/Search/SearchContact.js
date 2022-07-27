@@ -1,8 +1,8 @@
 import React from 'react';
-import Contacts from '../../Navigation/routes';
-import { useNavigation } from '@react-navigation/native';
 
 import SearchButton from './SearchButton';
+import Contacts from '../../Navigation/routes';
+import { useNavigation } from '@react-navigation/native';
 
 const SearchContact = ({ allContacts }) => {
   const navigation = useNavigation();

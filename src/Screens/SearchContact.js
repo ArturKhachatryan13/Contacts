@@ -1,45 +1,35 @@
-import { useRoute } from '@react-navigation/native';
 import React, { useState, useCallback, useRef } from 'react';
 
 import { SafeAreaView, StyleSheet } from 'react-native';
+
 import ContactInput from '../Components/Search/ContactInput';
 import ContactsBar from '../Components/Search/ContactsBar';
 import BackButton from '../ui-kit/BackButton';
 import Colors from '../../utils/colors';
 
-const SeachContact = () => {
-  const route = useRoute();
+import { useSelector } from 'react-redux';
+import { searchContact, selectLastCalls } from '../store/selectors';
+
+const SearchContact = () => {
   const timeoutRef = useRef();
-  const contactsList = route.params.contacts;
-  const mockData = useRef(contactsList.slice(0, 10));
+  const mockData = useRef(useSelector(selectLastCalls));
   const [value, setValue] = useState('');
   const [data, setData] = useState(mockData.current);
+  const selectedContact = useSelector(searchContact(value));
 
   const setSearchInputValue = text => {
     setValue(text);
     clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => {
       getNecesseryContact(text);
-    }, 200);
+    }, 300);
   };
 
   const getNecesseryContact = useCallback(
     text => {
-      setData(
-        text
-          ? contactsList?.filter(contact => {
-              return (
-                contact?.name +
-                ' ' +
-                (contact.surname ? contact?.surname : '')
-              )
-                .toUpperCase()
-                .includes(text.toUpperCase().trim());
-            })
-          : mockData.current,
-      );
+      setData(text ? selectedContact : mockData.current);
     },
-    [contactsList],
+    [selectedContact],
   );
 
   return (
@@ -56,7 +46,7 @@ const styles = StyleSheet.create({
   },
 });
 
-SeachContact.options = ({ navigation }) => {
+SearchContact.options = ({ navigation }) => {
   return {
     title: 'Contacts',
     presentation: 'modal',
@@ -72,4 +62,4 @@ SeachContact.options = ({ navigation }) => {
   };
 };
 
-export default SeachContact;
+export default SearchContact;

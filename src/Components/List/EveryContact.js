@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { View, Text, StyleSheet } from 'react-native';
+
 import Colors from '../../../utils/colors';
 import Avatar from '../../ui-kit/Avatar';
 
