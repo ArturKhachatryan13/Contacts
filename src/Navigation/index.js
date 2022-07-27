@@ -1,7 +1,5 @@
 import * as React from 'react';
 
-import SeachContact from '../Screens/SeachContactButton';
-import ContactsList from '../Screens/HomeScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ScreensComponents from './screens';
@@ -24,8 +22,8 @@ function NavigationRoot() {
         />
         <Stack.Screen
           name={Routes.CONTACTS}
-          component={ScreensComponents.SeachContact}
-          options={ScreensComponents.SeachContact.options}
+          component={ScreensComponents.SearchContact}
+          options={ScreensComponents.SearchContact.options}
         />
         <Stack.Screen
           name={Routes.ADD_CONTACT}

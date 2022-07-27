@@ -10,7 +10,7 @@ import Colors from '../../utils/colors';
 import { useSelector } from 'react-redux';
 import { searchContact, selectLastCalls } from '../store/selectors';
 
-const SeachContact = () => {
+const SearchContact = () => {
   const timeoutRef = useRef();
   const mockData = useRef(useSelector(selectLastCalls));
   const [value, setValue] = useState('');
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   },
 });
 
-SeachContact.options = ({ navigation }) => {
+SearchContact.options = ({ navigation }) => {
   return {
     title: 'Contacts',
     presentation: 'modal',
@@ -62,4 +62,4 @@ SeachContact.options = ({ navigation }) => {
   };
 };
 
-export default SeachContact;
+export default SearchContact;

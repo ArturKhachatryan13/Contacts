@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import { addContactAction } from '../store/actions';
 import AddContactInput from '../ui-kit/Input/index';
-import SaveButton from '../ui-kit/SaveButton';
+import SaveButton from '../ui-kit/Button';
 import colors from '../../utils/colors';
 
 import { useDispatch } from 'react-redux';

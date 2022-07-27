@@ -11,7 +11,7 @@ const renderItem = ({ item }) => {
   return <Contact contact={item} isFavorite />;
 };
 
-const FavorateContactsList = ({ vertical }) => {
+const FavorateContactsList = () => {
   const favorateContacts = useSelector(selectFavorateContacts);
   return (
     <FlatList horizontal data={favorateContacts} renderItem={renderItem} />

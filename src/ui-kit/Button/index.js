@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Text, TouchableOpacity } from 'react-native';
 
-import buttonsize from '../SaveButton/size';
+import buttonsize from '../Button/size';
 
 const Button = ({ onPass, title, small }) => {
   return (
