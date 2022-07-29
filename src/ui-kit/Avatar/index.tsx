@@ -2,7 +2,6 @@ import React, { useMemo, FC } from 'react';
 
 import { View, Text, Image, StyleSheet } from 'react-native';
 
-import textStyle from './textSize';
 import Colors from '../../../utils/colors';
 
 export enum AvatarSize {
@@ -15,7 +14,7 @@ interface IAvatar {
   name: string;
   surname: string;
   size: AvatarSize;
-  style: string;
+  style: any;
 }
 
 const Avatar: FC<IAvatar> = ({ image, name, surname, size, style }) => {
@@ -31,7 +30,9 @@ const Avatar: FC<IAvatar> = ({ image, name, surname, size, style }) => {
     />
   ) : (
     <View style={[containerSize.contactContainerStyles, containerSize[size]]}>
-      <Text style={[textStyle.textstyle, textStyle[size]]}>{userInitials}</Text>
+      <Text style={[textStyles.textstyle, textStyles[size]]}>
+        {userInitials}
+      </Text>
     </View>
   );
 };
@@ -68,6 +69,14 @@ const containerSize = StyleSheet.create({
     height: 103,
     borderRadius: 24,
   },
+});
+const textStyles = StyleSheet.create({
+  textstyle: {
+    ineHeight: 24,
+    color: Colors.white,
+  },
+  [AvatarSize.small]: { fontSize: 14 },
+  [AvatarSize.medium]: { fontSize: 16 },
 });
 
 export default Avatar;
