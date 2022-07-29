@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-import Avatar from '../../ui-kit/Avatar';
+import Avatar, { AvatarSize } from '../../ui-kit/Avatar';
 
 const FavoriteContact = ({ contact }) => {
   const contactName =
@@ -13,7 +13,7 @@ const FavoriteContact = ({ contact }) => {
         name={contact.name}
         surname={contact.surname}
         image={contact.photo}
-        size="medium"
+        size={AvatarSize.medium}
       />
       <Text style={styles.nameStyle} numberOfLines={1}>
         {contactName}

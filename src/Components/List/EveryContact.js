@@ -3,7 +3,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 import Colors from '../../../utils/colors';
-import Avatar from '../../ui-kit/Avatar';
+import Avatar, { AvatarSize } from '../../ui-kit/Avatar';
 
 const EveryContact = ({ contact }) => {
   return (
@@ -12,7 +12,7 @@ const EveryContact = ({ contact }) => {
         name={contact.name}
         surname={contact.surname}
         image={contact.photo}
-        size="small"
+        size={AvatarSize.small}
       />
 
       <View style={styles.contactNameContainer}>

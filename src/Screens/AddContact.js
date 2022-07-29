@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import { addContactAction } from '../store/actions';
 import AddContactInput from '../ui-kit/Input/index';
 import SaveButton from '../ui-kit/Button';
 import colors from '../../utils/colors';
+import { addContact } from '../store/contactsSlice';
 
 import { useDispatch } from 'react-redux';
 
@@ -24,7 +24,7 @@ const AddContact = () => {
       number: phoneValue,
     };
     if (nameValue && phoneValue.length >= 6) {
-      dispatch(addContactAction(contact));
+      dispatch(addContact(contact));
       navigation.goBack();
     }
   };

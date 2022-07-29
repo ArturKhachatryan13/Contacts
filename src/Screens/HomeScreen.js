@@ -12,7 +12,7 @@ import Contacts from '../Navigation/routes';
 import { useSelector } from 'react-redux';
 
 const ContactsList = () => {
-  const generetedData = useSelector(state => state);
+  const generetedData = useSelector(state => state.contacts.contacts);
 
   return (
     <View style={styles.mainScreenContainer}>

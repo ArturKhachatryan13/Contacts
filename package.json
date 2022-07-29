@@ -8,12 +8,17 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "i": "yarn && cd ios && pod install" 
+    "i": "yarn && cd ios && pod install"
   },
   "dependencies": {
     "@react-navigation/native": "^6.0.10",
     "@react-navigation/native-stack": "^6.6.2",
     "@react-navigation/stack": "^6.2.2",
+    "@reduxjs/toolkit": "^1.8.3",
+    "@types/react-redux": "^7.1.24",
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "node-version": "^2.0.0",
     "react": "18.0.0",
     "react-native": "^0.69.1",
     "react-native-gesture-handler": "^2.5.0",
@@ -29,11 +34,17 @@
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^2.0.0",
+    "@types/jest": "^28.1.6",
+    "@types/react": "^18.0.15",
+    "@types/react-native": "^0.69.3",
+    "@types/react-test-renderer": "^18.0.0",
     "babel-jest": "^26.6.3",
     "eslint": "^7.32.0",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.70.3",
-    "react-test-renderer": "18.0.0"
+    "react-native-typescript-transformer": "^1.2.13",
+    "react-test-renderer": "18.0.0",
+    "typescript": "^4.7.4"
   },
   "jest": {
     "preset": "react-native"

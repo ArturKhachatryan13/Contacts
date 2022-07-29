@@ -21,11 +21,11 @@ const SearchContact = () => {
     setValue(text);
     clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => {
-      getNecesseryContact(text);
-    }, 300);
+      getNecessaryContact(text);
+    }, 500);
   };
 
-  const getNecesseryContact = useCallback(
+  const getNecessaryContact = useCallback(
     text => {
       setData(text ? selectedContact : mockData.current);
     },
