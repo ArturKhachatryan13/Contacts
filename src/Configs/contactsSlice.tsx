@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { generateData } from '../../utils/helperFunctions/contactsListGenerator';
 import userInfo from '../../utils/constants';
-import { Icontact } from '../store/types';
+import { Icontact } from './types';
 
 interface ContactsState {
   contacts: Icontact[];

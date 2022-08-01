@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import { TextInput, StyleSheet } from 'react-native';
 
-const Input = ({ title, value, onChangeText, keyboardType }) => {
+export enum KeyboardVariant {
+  keyboardType = 'numeric',
+}
+
+interface InputType {
+  title: string;
+  value: string;
+  onChangeText: (e: string) => void;
+  keyboardType?: KeyboardVariant.keyboardType;
+}
+
+const Input: FC<InputType> = ({ title, value, onChangeText, keyboardType }) => {
   return (
     <TextInput
       keyboardType={keyboardType}

@@ -6,18 +6,20 @@ import { useNavigation } from '@react-navigation/native';
 import AddContactInput from '../ui-kit/Input/index';
 import SaveButton from '../ui-kit/Button';
 import colors from '../../utils/colors';
-import { addContact } from '../store/contactsSlice';
+import { addContact } from '../Configs/contactsSlice';
+import { KeyboardVariant } from '../ui-kit/Input/index';
+import { ButtonSizeVariant } from '../ui-kit/Button';
 
 import { useDispatch } from 'react-redux';
 
 const AddContact = () => {
   const dispatch = useDispatch();
   const navigation = useNavigation();
-  const [nameValue, setNameValue] = useState('');
-  const [surnameValue, setSurnameValue] = useState('');
-  const [phoneValue, setPhoneValue] = useState('');
+  const [nameValue, setNameValue] = useState<string>('');
+  const [surnameValue, setSurnameValue] = useState<string>('');
+  const [phoneValue, setPhoneValue] = useState<string>('');
 
-  const addNewContact = () => {
+  const addNewContact = (): void => {
     const contact = {
       name: nameValue,
       surname: surnameValue,
@@ -46,7 +48,7 @@ const AddContact = () => {
         }}
       />
       <AddContactInput
-        keyboardType="numeric"
+        keyboardType={KeyboardVariant.keyboardType}
         title="phone"
         value={phoneValue}
         onChangeText={text => {
@@ -54,7 +56,11 @@ const AddContact = () => {
         }}
       />
       <View style={styles.buttonContainer}>
-        <SaveButton title="Save" onPass={addNewContact} small="small" />
+        <SaveButton
+          title="Save"
+          onPass={addNewContact}
+          small={ButtonSizeVariant.small}
+        />
       </View>
     </View>
   );

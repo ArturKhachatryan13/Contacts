@@ -3,8 +3,8 @@ import React from 'react';
 import { FlatList } from 'react-native';
 
 import Contact from './Contact';
-import { selectFavorateContacts } from '../../store/selectors';
 
+import { selectFavorateContacts } from '../../Configs/selectors';
 import { useSelector } from 'react-redux';
 
 const renderItem = ({ item }) => {
