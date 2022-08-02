@@ -1,7 +1,9 @@
-import * as React from 'react';
+import React from 'react';
+
 import NavigationRoot from './src/Navigation';
+
 import { Provider } from 'react-redux';
-import { store } from './src/store/index';
+import { store } from './src/Configs/configure-store';
 
 function App() {
   return (

@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { TouchableOpacity, Image, StyleSheet } from 'react-native';
 import colors from '../../../utils/colors';
 
-const BackButton = ({ onPress }) => {
+type BackButton = {
+  onPress: () => void;
+};
+
+const BackButton: FC<BackButton> = ({ onPress }) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.buttonContainer}>
       <Image

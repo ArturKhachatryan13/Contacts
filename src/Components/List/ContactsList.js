@@ -3,7 +3,7 @@ import React from 'react';
 import { SectionList, View, Text, StyleSheet } from 'react-native';
 
 import Contact from './Contact';
-import { selectSectionsContacts } from '../../store/selectors';
+import { selectSectionsContacts } from '../../Configs/selectors';
 
 import { useSelector } from 'react-redux';
 

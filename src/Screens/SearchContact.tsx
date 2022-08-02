@@ -8,25 +8,25 @@ import BackButton from '../ui-kit/BackButton';
 import Colors from '../../utils/colors';
 
 import { useSelector } from 'react-redux';
-import { searchContact, selectLastCalls } from '../store/selectors';
+import { searchContact, selectLastCalls } from '../Configs/selectors';
 
 const SearchContact = () => {
-  const timeoutRef = useRef();
+  const timeoutRef = useRef<NodeJS.Timeout>();
   const mockData = useRef(useSelector(selectLastCalls));
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState<string>('');
   const [data, setData] = useState(mockData.current);
   const selectedContact = useSelector(searchContact(value));
 
-  const setSearchInputValue = text => {
+  const setSearchInputValue = (text: string) => {
     setValue(text);
     clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => {
-      getNecesseryContact(text);
-    }, 300);
+      getNecessaryContact(text);
+    }, 500);
   };
 
-  const getNecesseryContact = useCallback(
-    text => {
+  const getNecessaryContact = useCallback(
+    (text: string) => {
       setData(text ? selectedContact : mockData.current);
     },
     [selectedContact],
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   },
 });
 
-SearchContact.options = ({ navigation }) => {
+SearchContact.options = ({ navigation }: { navigation: any }) => {
   return {
     title: 'Contacts',
     presentation: 'modal',
