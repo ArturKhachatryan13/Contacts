@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
 
-import { TextInput, StyleSheet } from 'react-native';
+import { TextInput, StyleSheet, KeyboardTypeOptions } from 'react-native';
 
 interface InputType {
   title: string;
   value: string;
   onChangeText: (e: string) => void;
-  keyboardType?: 'numeric';
+  keyboardType?: KeyboardTypeOptions;
 }
 
 const Input: FC<InputType> = ({ title, value, onChangeText, keyboardType }) => {

@@ -6,8 +6,7 @@ import {
 } from '../../utils/helperFunctions/contactsListGenerator';
 import { Icontact } from './types';
 
-export const selectContacts = (state: { contacts: { contacts: [] } }) =>
-  state.contacts.contacts;
+export const selectContacts = (state: { contacts: [] }) => state.contacts;
 
 export const getAllContacts = createSelector(selectContacts, contacts => {
   return contacts;
