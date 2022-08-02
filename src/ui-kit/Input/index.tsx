@@ -2,15 +2,11 @@ import React, { FC } from 'react';
 
 import { TextInput, StyleSheet } from 'react-native';
 
-export enum KeyboardVariant {
-  keyboardType = 'numeric',
-}
-
 interface InputType {
   title: string;
   value: string;
   onChangeText: (e: string) => void;
-  keyboardType?: KeyboardVariant.keyboardType;
+  keyboardType?: 'numeric';
 }
 
 const Input: FC<InputType> = ({ title, value, onChangeText, keyboardType }) => {

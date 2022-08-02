@@ -8,15 +8,16 @@ import AllListContacts from '../Components/List/ContactsList';
 import SearchContact from '../Components/Search/SearchContact';
 import AddHeaderButton from '../Components/profileHeader/AddHeaderButton';
 import Contacts from '../Navigation/routes';
+import { getAllContacts } from '../Configs/selectors';
 
 import { useSelector } from 'react-redux';
 
 const ContactsList = () => {
-  const generetedData = useSelector(state => state.contacts.contacts);
+  const generatedData = useSelector(getAllContacts);
 
   return (
     <View style={styles.mainScreenContainer}>
-      <SearchContact allContacts={generetedData} />
+      <SearchContact allContacts={generatedData} />
       <FavorateContactsList />
       <AllListContacts />
     </View>

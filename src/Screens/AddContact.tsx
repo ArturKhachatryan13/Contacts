@@ -4,10 +4,9 @@ import { View, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import AddContactInput from '../ui-kit/Input/index';
-import SaveButton from '../ui-kit/Button';
+import SaveContact from '../ui-kit/Button';
 import colors from '../../utils/colors';
 import { addContact } from '../Configs/contactsSlice';
-import { KeyboardVariant } from '../ui-kit/Input/index';
 import { ButtonSizeVariant } from '../ui-kit/Button';
 
 import { useDispatch } from 'react-redux';
@@ -48,7 +47,7 @@ const AddContact = () => {
         }}
       />
       <AddContactInput
-        keyboardType={KeyboardVariant.keyboardType}
+        keyboardType="numeric"
         title="phone"
         value={phoneValue}
         onChangeText={text => {
@@ -56,7 +55,7 @@ const AddContact = () => {
         }}
       />
       <View style={styles.buttonContainer}>
-        <SaveButton
+        <SaveContact
           title="Save"
           onPass={addNewContact}
           small={ButtonSizeVariant.small}

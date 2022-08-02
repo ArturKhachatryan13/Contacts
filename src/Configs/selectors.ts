@@ -4,9 +4,14 @@ import {
   changeDataStructure,
   compare,
 } from '../../utils/helperFunctions/contactsListGenerator';
+import { Icontact } from './types';
 
 export const selectContacts = (state: { contacts: { contacts: [] } }) =>
   state.contacts.contacts;
+
+export const getAllContacts = createSelector(selectContacts, contacts => {
+  return contacts;
+});
 
 export const selectFavorateContacts = createSelector(
   selectContacts,
@@ -26,7 +31,7 @@ export const selectLastCalls = createSelector(selectContacts, contacts => {
 
 export const searchContact = (value: string) =>
   createSelector(selectContacts, contacts => {
-    return contacts.filter((contact: { name: string; surname: string }) => {
+    return contacts.filter((contact: Icontact) => {
       return (contact?.name + ' ' + (contact.surname || ''))
         .toUpperCase()
         .includes(value.toUpperCase().trim());

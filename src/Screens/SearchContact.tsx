@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux';
 import { searchContact, selectLastCalls } from '../Configs/selectors';
 
 const SearchContact = () => {
-  const timeoutRef: { current: any } = useRef();
+  const timeoutRef = useRef<NodeJS.Timeout>();
   const mockData = useRef(useSelector(selectLastCalls));
   const [value, setValue] = useState<string>('');
   const [data, setData] = useState(mockData.current);
