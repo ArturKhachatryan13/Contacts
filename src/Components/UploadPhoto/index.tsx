@@ -9,17 +9,13 @@ type Upload = {
   onPress: () => void;
 };
 
+const initialIconPath = '../../assets/images/add_photo.png';
 const UploadPhoto: FC<Upload> = ({ uri, onPress }) => {
-  const initialIconPath =
-    'file:///Users/arturkhachatryan/Downloads/add-photo.png';
+  const contactPicture = uri ? { uri: uri } : require(initialIconPath);
+
   return (
     <TouchableOpacity onPress={onPress} style={styles.uploadImageContainer}>
-      <Image
-        style={styles.imageStyles}
-        source={{
-          uri: uri ? uri : initialIconPath,
-        }}
-      />
+      <Image style={styles.imageStyles} source={contactPicture} />
       <Text style={styles.textStyles}>Add photo</Text>
     </TouchableOpacity>
   );

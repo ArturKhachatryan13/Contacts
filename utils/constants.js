@@ -22,5 +22,6 @@ const img = [
   'https://i.pinimg.com/736x/9f/fd/57/9ffd57a41f8fa5dc3d29098db6cc63bd.jpg',
   'https://www.rhorvat.com/images/avatar.png',
 ];
+const initialIconPath = '../../assets/images/add_photo.png';
 
-export default { name, surname, numbers, img };
+export default { name, surname, numbers, img, initialIconPath };

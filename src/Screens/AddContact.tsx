@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 
-import { View, StyleSheet, KeyboardAvoidingView, Platform } from 'react-native';
+import {
+  View,
+  StyleSheet,
+  KeyboardAvoidingView,
+  Platform,
+  Alert,
+} from 'react-native';
 import { launchImageLibrary } from 'react-native-image-picker';
 import { useNavigation } from '@react-navigation/native';
 
@@ -31,20 +37,24 @@ const AddContact = () => {
     if (nameValue && phoneValue.length >= 6) {
       dispatch(addContact(contact));
       navigation.goBack();
+    } else if (!nameValue) {
+      Alert.alert('Please enter the Name');
+    } else {
+      Alert.alert('Missing numbers');
     }
   };
   type Options = {
     selectionLimit: number;
     mediaType: 'photo';
   };
-  const uploadPhoto = () => {
+  const uploadPhoto = async () => {
     const options: Options = { selectionLimit: 1, mediaType: 'photo' };
-    launchImageLibrary(options, response => {
-      const uri = response?.assets?.[0].uri;
-      if (uri) {
-        setPhotoValue(uri);
-      }
-    });
+    const res = await launchImageLibrary(options);
+
+    const uri = res?.assets?.[0].uri;
+    if (uri) {
+      setPhotoValue(uri);
+    }
   };
 
   return (
@@ -96,7 +106,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.white,
     justifyContent: 'center',
-    marginTop: -20,
   },
   uploadContainer: { alignItems: 'center' },
   inputAndButtonContainer: { marginBottom: 10 },
