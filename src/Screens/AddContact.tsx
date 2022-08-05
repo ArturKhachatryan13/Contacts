@@ -18,6 +18,10 @@ import { addContact } from '../Configs/contactsSlice';
 import { ButtonSizeVariant } from '../ui-kit/Button';
 
 import { useDispatch } from 'react-redux';
+type Options = {
+  selectionLimit: number;
+  mediaType: 'photo';
+};
 
 const AddContact = () => {
   const dispatch = useDispatch();
@@ -43,10 +47,7 @@ const AddContact = () => {
       Alert.alert('Missing numbers');
     }
   };
-  type Options = {
-    selectionLimit: number;
-    mediaType: 'photo';
-  };
+
   const uploadPhoto = async () => {
     const options: Options = { selectionLimit: 1, mediaType: 'photo' };
     const res = await launchImageLibrary(options);
