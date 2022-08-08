@@ -41,8 +41,10 @@ const AddContact = () => {
     if (nameValue && phoneValue.length >= 6) {
       dispatch(addContact(contact));
       navigation.goBack();
-    } else if (!nameValue) {
-      Alert.alert('Please enter the Name');
+    } else if (!nameValue && phoneValue.length <= 6) {
+      Alert.alert('Please enter the Name and the Number');
+    } else if (!nameValue && phoneValue.length >= 6) {
+      Alert.alert('Please enter the Name ');
     } else {
       Alert.alert('Missing numbers');
     }

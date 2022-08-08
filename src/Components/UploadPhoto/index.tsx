@@ -3,7 +3,6 @@ import React, { FC } from 'react';
 import { TouchableOpacity, Image, StyleSheet, Text } from 'react-native';
 
 import colors from '../../../utils/colors';
-import test from '../../../utils/constants';
 
 type Upload = {
   uri: string;
