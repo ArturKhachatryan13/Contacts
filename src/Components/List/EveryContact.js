@@ -1,13 +1,21 @@
 import React from 'react';
 
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 import Colors from '../../../utils/colors';
 import Avatar, { AvatarSize } from '../../ui-kit/Avatar';
+import { useNavigation } from '@react-navigation/native';
+import Contacts from '../../Navigation/routes';
 
 const EveryContact = ({ contact }) => {
+  const navigation = useNavigation();
+
   return (
-    <View style={styles.contactMainContainer}>
+    <TouchableOpacity
+      style={styles.contactMainContainer}
+      onPress={() => {
+        navigation.navigate(Contacts.MAIN, contact);
+      }}>
       <Avatar
         name={contact.name}
         surname={contact.surname}
@@ -21,7 +29,7 @@ const EveryContact = ({ contact }) => {
         </Text>
         <Text style={styles.number}>{contact?.number}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 export default EveryContact;

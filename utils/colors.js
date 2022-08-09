@@ -9,4 +9,8 @@ export default {
   aircraft_white: '#EFF0F7',
   blue_buzz: '#A0A3BD',
   shock_blue: '#3333FF',
+  caribbean_Green: '#00BA88',
+  dodger_blue: '#4680FF',
+  bittersweet: '#F55858',
+  solitude: '#D9DBE9',
 };

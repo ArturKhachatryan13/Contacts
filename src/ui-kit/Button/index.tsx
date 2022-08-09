@@ -12,6 +12,7 @@ interface ButtonProps {
   title: string;
   small: ButtonSizeVariant.small;
   onPass: () => void;
+  uri: string;
 }
 
 const Button: FC<ButtonProps> = ({ onPass, title, small }) => {
