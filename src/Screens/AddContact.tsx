@@ -24,7 +24,7 @@ type Options = {
 };
 
 const AddContact = () => {
-  console.log(13)
+
   const dispatch = useDispatch();
   const navigation = useNavigation();
   const [nameValue, setNameValue] = useState<string>('');
